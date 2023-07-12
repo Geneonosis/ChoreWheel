@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/color-wheel-icon-png-27.png" type="png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .chore-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+    <title>Chore Wheel</title>
+</head>
+
+<body>
+    <div class="chore-container">
+        <h1 id="chore-text">chore will show up here</h1>
+        <button id="chore-button" type="button" class="btn btn-primary">Click me for a random chore!</button>
+    </div>
+</body>
+
+<script>
+    // create an array of chores
+    const chores = [
+        'do the dishes',
+        'go for a walk',
+        'clean your bathroom',
+        'vacuum the floor',
+        'do the laundry',
+        'clean your room',
+        'read a chapter of your current book club book',
+        'wipe down the kitchen counters',
+        'clean out the fridge',
+        'organize your closet',
+        'clean out your car',
+        'vacuum your car',
+        'dust the living room',
+        'clean the windows',
+        'clean the mirrors',
+        'scrub the toilet',
+        'spray down the shower',
+        'clean the oven',
+        'polish the stove top',
+        'clean the microwave',
+        'clean the kitchen sink',
+        'polish the kitchen counters',
+        'organize the pantry',
+        'organize the fridge',
+        'organize the freezer',
+        'dush the bookshelves',
+        'clean the baseboards',
+        'take a 30 minute mental health break',
+        'take a 30 minute walk',
+        'take a 30 minute nap',
+        'take a shower',
+        'cut your nails',
+        'organize your email inbox',
+        'organize your computer desktop',
+        'organize your phone apps',
+        'organize your phone photos',
+        'organize your phone contacts',
+        'check your credit score',
+        'check your bank account',
+        'check the mail',
+        'brush your teeth',
+        'clean your keyboard and mouse',
+        'clean your phone',
+        'clean your glasses',
+        'eat a healthy snack',]
+
+    function getARandomChore(chores) {
+        const randomNumber = Math.floor(Math.random() * chores.length)
+        return chores[randomNumber]
+    }
+
+    const choreText = document.getElementById('chore-text')
+    const button = document.getElementById('chore-button')
+    button.onclick = function () {
+        choreText.textContent = getARandomChore(chores)
+        console.log('button clicked')
+    }
+</script>
+
+</html>
